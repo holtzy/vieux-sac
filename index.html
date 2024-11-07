@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For my Mulo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg-gradient-to-r from-pink-300/20 via-purple-300/20 to-blue-200/20 text-gray-900"
+  >
+    <style>
+      #fullscreenImage {
+        display: none;
+      }
+    </style>
+    <!-- Main Content -->
+    <div id="mainContent" class="container mx-auto py-40">
+      <!-- SECTION 1: Hints -->
+      <section
+        class="mb-10 flex flex-col justify-center items-center text-center"
+      >
+        <h1 class="text-3xl font-bold mb-4">🍾 Woooooooooooo 🍾</h1>
+        <p>
+          Quel enfer!<br />C'était déja pas bien parti mais la avec un an de
+          plus on est mal!<br />Remarque, on est pas a l'abri que ce soit
+          l'année<br />ou tu réussi a faire une manchette correcte!
+          <br /><br /><br />
+          Avec mon très cher Mulot on a un cadeau pour toi, mais faut répondre
+          au rébus si <br />dessous pour le trouver!
+        </p>
+        <p><br /></p>
+
+        <img src="./sac.jpeg" width="500px" />
+
+        <ul class="list-disc pl-5 space-y-2 text-left mt-24">
+          <li>Mon premier est comme le tu mais juste avant !</li>
+          <li>
+            Mon deuxieme est un truc noir qui sali mais quand meme on en voit
+            moins qu'avant.
+          </li>
+          <li>
+            Mon troisième: est le resultat de ca:
+            <img src="./equation.png" width="200px" />
+          </li>
+          <li>Mon quatrième n'est pas petit du tout!</li>
+          <li>
+            Mon cinquième est une des rares personnes que je connais qui ne rale
+            pas quand il boxe avec toi
+          </li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold mb-4 mt-8">
+          Mon tout est qq chose que tu te dis souvent en te réveillant le<br />matin
+          ou quand tu te réveilles le matin a chateau perché.
+        </h2>
+        <form id="secretForm" class="space-y-4">
+          <input
+            type="text"
+            id="userInput"
+            class="border rounded p-2 w-full"
+            placeholder="Enter the secret word..."
+          />
+          <button
+            type="submit"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            J'ai trouvé!
+          </button>
+        </form>
+        <p id="message" class="text-red-500 mt-4 hidden">Try again!</p>
+      </section>
+    </div>
+
+    <!-- Fullscreen Image (Hidden initially) -->
+    <div id="fullscreenImage" style="text-align: center">
+      <p style="font-size: 3em; font-weight: bold; margin-bottom: 20px">
+        Joyeux anniversaire gros sac!!!!!
+      </p>
+      <p>
+        Réserve ton 22 novembre midi. On a une surprise pour toi mais on est des
+        gros sacs aussi donc c'est pas encore compeltement callé!
+      </p>
+      <div style="display: flex; justify-content: center; gap: 20px">
+        <img src="./mel.png" width="50%" style="max-width: 500px" />
+        <img src="./yan.png" width="50%" style="max-width: 500px" />
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("secretForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const input = document
+            .getElementById("userInput")
+            .value.toLowerCase();
+          const message = document.getElementById("message");
+          const fullscreenImage = document.getElementById("fullscreenImage");
+          const mainContent = document.getElementById("mainContent");
+
+          if (input === "je suis un gros sac") {
+            mainContent.style.display = "none";
+            fullscreenImage.style.display = "block";
+          } else {
+            message.style.display = "block";
+          }
+        });
+    </script>
+  </body>
+</html>
